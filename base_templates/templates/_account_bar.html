@@ -1,0 +1,41 @@
+{% load i18n %}
+{% load account %}
+
+<!-- Nav Item - User Information -->
+{% if request.user.is_authenticated %}
+<li class="nav-item dropdown no-arrow">
+    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{% user_display request.user %}</span>
+    <!--<img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
+    </a>
+    <!-- Dropdown - User Information -->
+    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <a class="dropdown-item" href="/users/{% user_display user %}">
+            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+            {% trans "Profile" %}
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{% url 'account_logout' %}">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+            {% trans "Log out" %}
+        </a>
+    </div>
+</li>
+{% else %}
+<li class="nav-item dropdown no-arrow">
+    <a class="nav-link" href="{% url 'account_login' %}" role="button">
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">{% trans "Log in" %}</span>
+        <i class="fas fa-sign-in-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+    </a>
+</li>
+
+<div class="topbar-divider d-none d-sm-block"></div>
+
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'account_signup' %}" role="button">
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">{% trans "Sign up" %}</span>
+        <i class="fas fa-user-plus fa-sm fa-fw mr-2 text-gray-400"></i>
+    </a>
+</li>
+
+{% endif %}

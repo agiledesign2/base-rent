@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block body %}
+<div class="container my-4">
+  <ul class="list-unstyled list-inline text-center font-weight-bold">
+    <li class="list-inline-item h4 mb-0 text-gray-800">{% block card %}{% endblock %}</li>
+  </ul>
+</div>
+<section class="clean-block features">
+<div class="container">
+<div class="row">
+  <div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">
+          {% block text %}
+          {% endblock %}
+        </h6>
+      </div>
+      <div class="card-body p-5">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+{% endblock %}

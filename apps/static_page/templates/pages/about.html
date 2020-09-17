@@ -1,0 +1,48 @@
+{% extends "pages/base.html" %}
+{% load i18n static %}
+
+{% block head_title %}{% trans "About" %}{% endblock %}
+
+{% block text %}
+{% trans "About" %}
+{% endblock %}
+
+{% block content %}
+    <div class="row pt-5 mb-5">
+        <div class="col-md-12 col-lg-12 main-content">
+        	<!-- intro section start -->
+			<section class="intro-section">
+				<div class="container text-center">
+					<div class="row">
+						<div class="col-xl-10 offset-xl-1">
+							<h2 class="section-title">Hola soy David Gómez, <span>soy un Desarrollador y Programador de software</span> el cual Trabaja como FreeLancer.</h2>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- intro section end -->
+
+            <!-- page section start -->
+			<section class="page-section pt-5 mb-5">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<p>Tengo 5 años de experiencia desarrollando y programando. Utilizo el lenguaje Python para realizar aplicaciones web y de escritorio. He trabajado en el diseño y desarrollo de sitios web como programador de Back-end con Django.</p>
+							<p>Python es mi lenguaje con el que más experiencia tengo, también he trabajado con los lenguajes JavaScript y C/C++.</p>
+							<p>Actual mente estoy trabajando en proyectos para proporcionar un sistema Auth por medio de una API implementada en djangorestframework a una aplicación React con hooks y Redux.</p>
+							<p>Anterior mente estuve trabajando en proyectos para la Raspberry PI utilizando la tecnología NFC para la Internet de las cosas (IoT).</p>
+							<p>Me gusta trabajar en proyectos en los cuales hay que automaticen o simplifiquen las tareas del usuario.</p>
+							<p>Me dedico a desarrollar aplicaciones que se adapten a los requerimientos de mis clientes. Programas total mente hechos a las medidas de sus necesidades y las de sus usuarios (Target) y todo acorde a las nuevas tecnologías.</p>
+						</div>
+						<div class="col-lg-5 offset-lg-1">
+							<figure class="pic-frame">
+								<img src="{% static 'img/about.jpg' %}" alt="David Gomez Desarrollador Python">
+							</figure>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- page section end -->
+        </div>
+    </div>
+{% endblock %}

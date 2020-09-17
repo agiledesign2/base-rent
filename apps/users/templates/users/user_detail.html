@@ -1,0 +1,46 @@
+{% extends "users/base.html" %}
+{% load static i18n %}
+
+{% block head_title %}{{ user }} Profile{% endblock %}
+
+{% block card %}
+Profile
+{% endblock %}
+
+{% block text %}
+{{ user }}
+{% endblock %}
+
+{% block content %}
+<div class="grid-20">
+    <ul>
+        <li><a href="{% url 'users:update' user %}">Edit Profile</a></li>
+        <li><a href="{% url 'account_change_password' %}">Change Password</a></li>
+    </ul>
+</div>
+<div class="grid-80">
+    {% if not user.first_name %}
+        <p>You have an empty profile.</p>
+        <a href="{% url 'users:update' user %}">Add some info</a>
+    {% else %}
+        <figure>
+        	<img width="100px" height="100px" src="{{ user.get_avatar }}">
+            {# <img class="rounded-circle account-img" src="{{ user.get_avatar }}"> #}
+        </figure>
+        <div class="grid-50">
+            <p><span class="underline">First Name</span>: {{ user.first_name }}</p>
+            <p><span class="underline">Email</span>: {{ user.email }}</p>
+            <p><span class="underline">City</span>: {{ user.city }}</p>
+            <p><span class="underline">State</span>: {{ user.state }}</p>
+            <p><span class="underline">Country</span>: {{ user.country }}</p>
+        </div>
+        <div class="grid-50">
+            <p><span class="underline">Last Name</span>: {{ user.last_name }}</p>
+            <p><span class="underline">Birth Date</span>: {{ user.birth_date }}</p>
+        </div>
+        <div class="grid-100">
+            <p><span class="underline">Bio</span>: {{ user.original_filename|safe }}</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

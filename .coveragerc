@@ -1,0 +1,5 @@
+[run]
+include = base_new/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin

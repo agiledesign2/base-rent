@@ -1,0 +1,52 @@
+{% load pinax_blog_tags %}
+{% load pinax_comments_tags %}
+{% load static %}
+            <!--<div class="sidebar-box search-form-wrap">
+              <form action="#" class="search-form">
+                <div class="form-group">
+                  <span class="icon fa fa-search"></span>
+                  <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
+                </div>
+              </form>
+            </div> -->
+            <!-- END sidebar-box -->
+            <div class="sidebar-box">
+              <div class="bio text-center">
+                <img src="{% static 'images/person_1.jpg' %}" alt="David Gomez Desarrollador Python" class="img-fluid">
+                <div class="bio-body">
+                  <h2>David Gomez</h2>
+                  <p>Hola soy David Gómez, soy un Desarrollador y Programador de software el cual Trabaja como FreeLancer. Me dedico al desarrollo, diseño de sitios web, el desarrollo de aplicaciones móviles y de escritorio.</p>
+                  <p><a href="/about/" class="btn btn-primary btn-sm">Mas sobre mi</a></p>
+                  <p class="social">
+                    <a href="#" class="p-2"><span class="fab fa-facebook"></span></a>
+                    <a href="#" class="p-2"><span class="fab fa-twitter"></span></a>
+                    <a href="#" class="p-2"><span class="fab fa-instagram"></span></a>
+                    <a href="#" class="p-2"><span class="fab fa-youtube"></span></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- END sidebar-box -->  
+            <div class="sidebar-box">
+              <h3 class="heading">Popular Posts</h3>
+              <div class="post-entry-sidebar">
+                <ul>
+                {% latest_blog_posts as latest_ga %}
+                {% for ga in latest_ga %}
+                  {% include "pinax/blog/latest_post.html" %}
+                {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <!-- END sidebar-box -->
+
+            <div class="sidebar-box">
+              <h3 class="heading">Sections</h3>
+              <ul class="tags">
+              {% blog_sections as sections %}
+              {% for section in sections %}
+                <!--<li><a href="/search/?q={{ section.name }}">{{ section.name }}</a></li>-->
+                <li><a href="/blog/section/{{ section.name }}">{{ section.name }}</a></li>
+              {% endfor %}
+              </ul>
+            </div>

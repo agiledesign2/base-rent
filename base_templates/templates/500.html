@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Server Error" %}{% endblock %}
+
+{% block body %}
+<div class="col-lg-12 pt-5">
+    <header class="server-error internal-server-error">
+        <h1>{% trans "Something went wrong" %}</h1>
+        <p>{% trans "We're sorry but a server error has occurred. We've been notified and will look into it as soon as possible." %}</p>
+    </header>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% load i18n %}
+{% load account %}
+
+{% with request.resolver_match.url_name as url_name %}
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
+
+  <!-- Sidebar - Brand -->
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+    <div class="sidebar-brand-icon rotate-n-15">
+      <i class="fab fa-python"></i>
+    </div>
+    <div class="sidebar-brand-text mx-3">Menu</div>
+  </a>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item {% if url_name == 'search' %}active{% endif %}">
+    <a class="nav-link" href="/blog/search/">
+      <i class="fas fa-fw fa-search"></i>
+      <span>Search</span></a>
+  </li>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+  <li class="nav-item {% if url_name == 'home' %}active{% endif %}">
+    <a class="nav-link" href="/">
+      <i class="fas fa-fw fa-home"></i>
+      <span>Home</span></a>
+  </li>
+  <li class="nav-item {% if url_name == 'index' %}active{% endif %}">
+    <a class="nav-link" href="{% url 'posts:index' %}">
+      <i class="fas fa-fw fa-blog"></i>
+      <span>Blog</span></a>
+  </li>
+  <li class="nav-item {% if url_name == 'about' %}active{% endif %}">
+    <a class="nav-link" href="{% url 'static_page:about' %}">
+      <i class="fas fa-fw fa-info-circle"></i>
+      <span>About</span></a>
+  </li>
+  <li class="nav-item {% if url_name == 'contact_form' %}active{% endif %}">
+    <a class="nav-link" href="{% url 'contact_form' %}">
+      <i class="fas fa-fw fa-address-card"></i>
+      <span>Contact</span></a>
+  </li>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider d-none d-md-block">
+
+  <!-- Sidebar Toggler (Sidebar) -->
+  <div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+  </div>
+
+</ul>
+{% endwith %}

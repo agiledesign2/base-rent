@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block head_title %}Home{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 col-lg-12 main-content">
+        <!-- Start Portfolio Section -->
+        <div class="container-fluid bg-white pt-3 pb-4 border-bottom">
+        <section class="portfolio-block block-intro">
+            <div class="container">
+                <div class="avatar" style="background-image:url({% static 'img/about.jpg' %});"></div>
+                <div class="about-me">
+                    <p>¡Hola! soy <strong>David Gómez</strong>. Me dedico al desarrollo de sitios y aplicaciones web. Mi pasión es crear cosas nuevas y a la medida del problema.
+                    </p><a class="btn btn-outline-primary" role="button" href="cv.html">Contrátame</a>
+                </div>
+            </div>
+        </section>
+        </div>
+        <!-- End Portfolio Section -->
+
+         <!-- Start About Us Section -->
+    <div class="container-fluid pt-3 pb-4">
+    <section class="portfolio-block photography">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static '/img/web1.jpg' %}"></a></div>
+                <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static '/img/blog.jpg' %}"></a></div>
+                <div class="col-md-6 col-lg-4 item zoom-on-hover"><a href="#"><img class="img-fluid image" src="{% static '/img/image6.png' %}"></a></div>
+            </div>     
+        </div><!-- /.container -->
+    </section>
+    </div>
+
+    <div class="container-fluid bg-white pt-3 pb-4 border-bottom">
+          <section class="portfolio-block">
+            <div class="container">
+                <div class="heading">
+                    <h2>Habilidades especiales</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card special-skill-item border-0">
+                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-star-outline"></i></div>
+                            <div class="card-body">
+                                <h3 class="card-title">Tu sitio desde 0</h3>
+                                <p class="card-text">Diseñare un sitio web completo, según tus requerimientos y necesidades.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card special-skill-item border-0">
+                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-lightbulb-outline"></i></div>
+                            <div class="card-body">
+                                <h3 class="card-title">Rediseño de tu sitio</h3>
+                                <p class="card-text">Agregare nuevas secciones, servicios a tu sitio o lo actualizare a las tendencias y requerimientos del momento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card special-skill-item border-0">
+                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-gear-outline"></i></div>
+                            <div class="card-body">
+                                <h3 class="card-title">Tu aplicación</h3>
+                                <p class="card-text">Creare una aplicación telefónica para que mejores la interacción de tus usuarios con tu contenido.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- End About Us Section -->
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_body %}
+<script type="text/javascript">
+
+var $ = jQuery.noConflict();
+
+/*----------------------------------------------------*/
+/*  Css3 Transition
+/*----------------------------------------------------*/
+
+$('*').each(function(){
+    if($(this).attr('data-animation')) {
+        var $animationName = $(this).attr('data-animation'),
+            $animationDelay = "delay-"+$(this).attr('data-animation-delay');
+        $(this).appear (function() {
+            $(this).addClass('animated').addClass($animationName);
+            $(this).addClass('animated').addClass($animationDelay);
+        });
+    }
+});
+        
+/*---------------------------------------------------*/
+/* Progress Bar
+/*---------------------------------------------------*/
+$(document).ready(function($) {
+"use strict";
+    
+	$('.skill-shortcode').appear(function() {
+    	$('.progress').each(function(){ 
+        	$('.progress-bar').css('width',  function(){ return ($(this).attr('data-percentage')+'%')});
+    	});
+    },{accY: -100});
+        
+        
+});
+</script>
+{% endblock %}
