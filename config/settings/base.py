@@ -112,6 +112,8 @@ THIRD_PARTY_APPS = [
     # for post
     # pages
     'robots',
+    'meta',
+    'analytical',
 ]
 
 LOCAL_APPS = [
@@ -442,17 +444,17 @@ REST_FRAMEWORK = {
 
 # Django-Meta
 # ------------------------------------------------------------------------------
-#META_SITE_PROTOCOL = 'http'
-#META_USE_SITES = True
-#META_SITE_NAME = 'agiledesign blog'
-#META_SITE_DOMAIN = ''
+META_SITE_PROTOCOL = 'http'
+META_USE_SITES = True
+META_SITE_NAME = 'agiledesign blog'
+META_SITE_DOMAIN = ''
 # META_IMAGE_URL
-#META_USE_OG_PROPERTIES = True
-#META_USE_TWITTER_PROPERTIES = True
-#META_USE_TITLE_TAG = True
-#META_USE_SITES = True
+META_USE_OG_PROPERTIES = True
+META_USE_TWITTER_PROPERTIES = True
+META_USE_TITLE_TAG = True
+META_USE_SITES = True
 
 # Django-Analytical
 # ------------------------------------------------------------------------------
-#GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-116517635-3'
-#GOOGLE_ANALYTICS_JS_PROPERTY_ID = 'UA-116517635-3'
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-116517635-3'
+GOOGLE_ANALYTICS_JS_PROPERTY_ID = 'UA-116517635-3'
